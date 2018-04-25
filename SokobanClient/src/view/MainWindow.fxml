@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import view.LevelDispayer?>
+<?import javafx.scene.control.TextField?>
+
+<BorderPane fx:id="broder" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.102" fx:controller="view.MainWindowController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+            	<MenuItem mnemonicParsing="false" onAction="#SelectLevel" text="Load Server's Level" />
+            	<MenuItem mnemonicParsing="false" onAction="#openFile" text="Load Local Level" />
+                <MenuItem mnemonicParsing="false" onAction="#SaveLevel" text="Save Level" />
+                <MenuItem mnemonicParsing="false" onAction="#closeGame" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Level Setting">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Show Hint" onAction="#getHint" />
+              <MenuItem mnemonicParsing="false" text="Show Solution" onAction="#getSolution" />
+              <MenuItem mnemonicParsing="false" text="Reset Level" onAction="#ResetLevel" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Settings">
+            <items>
+            	  <MenuItem mnemonicParsing="false" text="Add/Change Account" onAction="#SelectPlayer" />
+                  <MenuItem mnemonicParsing="false" onAction="#setControls" text="Controls" />
+                  <MenuItem mnemonicParsing="false" fx:id="musicC" onAction="#ControlMusic" text="Music OFF" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Scores">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Level's ScoreBoard" onAction="#ShowLevelScoreBoard" />
+              <MenuItem mnemonicParsing="false" text="Search ScoreBoard" onAction="#SearchScoreBoard" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Information">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Rules" onAction="#showHelp" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <LevelDispayer fx:id="levelDis" height="450.0" width="500.0" BorderPane.alignment="CENTER" ><!-- wallFileName="./resources/wall.jpg" boxFileName="./resources/box.jpg" characterFileName2="./resources/cBack.png" characterFileName3="./resources/cLeft.png" characterFileName4="./resources/cRight.png" characterFileName1="./resources/cFront.png" floorFileName="./resources/floor.png" targetFileName="./resources/target.png" boxInPlaceFilName="./resources/boxInPlace.jpg"> -->
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </LevelDispayer>
+   </center>
+   <bottom>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <VBox>
+               <children>
+                  <Label  text="Steps :">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Timer :">
+                     <VBox.margin>
+                        <Insets bottom="8.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox>
+               <children>
+                  <TextField text="0" fx:id="steps" alignment="CENTER" disable="true">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="8.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField text="0" fx:id="time" alignment="CENTER" disable="true">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

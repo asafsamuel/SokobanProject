@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.media.MediaView?>
+
+<BorderPane prefHeight="625.0" prefWidth="126.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.IntroVidController">
+   <center>
+      <MediaView fx:id="mediaV" fitHeight="850.0" fitWidth="750.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
